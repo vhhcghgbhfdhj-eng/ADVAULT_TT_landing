@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.advault.tt",
+    "sha256_cert_fingerprints": [
+      "92:F8:B1:09:99:20:2A:3D:54:D9:BB:E7:67:31:D0:C1:E1:CC:3F:1F:A1:41:AA:28:EA:36:9A:AC:93:03:88:20"
+    ]
+  }
+}]
