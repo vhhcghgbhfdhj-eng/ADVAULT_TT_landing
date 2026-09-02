@@ -1,0 +1,5 @@
+/downloads/app-version.json
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Headers: *
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Cache-Control: no-store, no-cache, must-revalidate
