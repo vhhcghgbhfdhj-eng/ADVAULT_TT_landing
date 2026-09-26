@@ -1,5 +1,6 @@
 (function () {
   var FRONTEND = "https://advault-frontend.onrender.com";
+  var LANDING = "https://advault-tt-landing.onrender.com";
 
   function parseInviteCode(search) {
     try {
@@ -11,13 +12,8 @@
     }
   }
 
-  function isAndroidUa(ua) {
-    return /Android/i.test(ua || "");
-  }
-
-  function isIosUa(ua) {
-    if (isAndroidUa(ua)) return false;
-    return /iPhone|iPod|iPad/i.test(ua || "");
+  function inviteShareUrl(code) {
+    return LANDING + "/?ref=" + encodeURIComponent(code);
   }
 
   function frontendInviteUrl(code) {
@@ -26,8 +22,7 @@
 
   var api = {
     parseInviteCode: parseInviteCode,
-    isAndroidUa: isAndroidUa,
-    isIosUa: isIosUa,
+    inviteShareUrl: inviteShareUrl,
     frontendInviteUrl: frontendInviteUrl
   };
 
@@ -60,11 +55,6 @@
   if (!code) return;
 
   try { localStorage.setItem("advault_invite_ref", code); } catch (e) {}
-
-  if (isIosUa(navigator.userAgent || "")) {
-    window.location.replace(frontendInviteUrl(code));
-    return;
-  }
 
   document.querySelectorAll("a[href*='advault-tt.apk']").forEach(function (link) {
     link.addEventListener("click", function () {
