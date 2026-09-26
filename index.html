@@ -8,12 +8,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      (function () {
+        try {
+          var host = location.hostname || "";
+          if (host === "localhost" || host === "127.0.0.1" || host === "[::1]") {
+            document.documentElement.classList.add("is-ios");
+            return;
+          }
+          var ua = navigator.userAgent || "";
+          if (/Android/i.test(ua)) return;
+          if (/iPhone|iPod|iPad/i.test(ua)) document.documentElement.classList.add("is-ios");
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div class="page">
       <header class="topbar">
         <div class="brand">ADVAULT <span>TT</span></div>
-        <a class="btn primary" href="/downloads/advault-tt.apk" download="advault-tt.apk">تحميل التطبيق</a>
+        <div class="topbar-actions">
+          <a class="btn primary" href="/downloads/advault-tt.apk" download="advault-tt.apk">تحميل التطبيق</a>
+          <a class="btn ghost ios-web" href="https://advault-frontend.onrender.com">تشغيل التطبيق على المتصفح — للآيفون فقط</a>
+        </div>
       </header>
 
       <section class="hero">

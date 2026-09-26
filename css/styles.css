@@ -60,6 +60,22 @@ a {
   padding: 10px 0;
 }
 
+.topbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btn.ios-web {
+  display: none;
+}
+
+html.is-ios .btn.ios-web {
+  display: inline-flex;
+}
+
 .brand {
   display: flex;
   align-items: center;
